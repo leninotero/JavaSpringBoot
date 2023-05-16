@@ -1,7 +1,11 @@
 package cobranca.algaworks.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,8 +15,10 @@ public class Titulo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
     private String descricao;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     private Date dataVencimento;
+    @NumberFormat(pattern = "#,##0.00")
     private BigDecimal valor;
     @Enumerated(EnumType.STRING)
     private StatusTitulo status;
