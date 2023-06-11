@@ -10,7 +10,7 @@ import org.springframework.web.servlet.i18n.FixedLocaleResolver;
 import java.util.Locale;
 
 @SpringBootApplication
-public class   AlgaworksApplication {
+public class AlgaworksApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AlgaworksApplication.class, args);
@@ -20,5 +20,4 @@ public class   AlgaworksApplication {
 	public LocaleResolver localeResolver(){
 		return new FixedLocaleResolver(new Locale("pt","BR"));
 	}
-
 }

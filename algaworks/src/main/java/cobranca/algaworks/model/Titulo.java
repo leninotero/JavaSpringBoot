@@ -5,9 +5,7 @@ import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
 public class Titulo {
@@ -76,5 +74,4 @@ public class Titulo {
             return false;
         return false;
     }
-
 }

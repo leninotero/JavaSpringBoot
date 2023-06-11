@@ -4,13 +4,13 @@ public enum StatusTitulo {
     PENDENTE("Pendente"),
     RECEBIDO("Recebido");
 
-    private String descriçao;
+    private String descricao;
 
     StatusTitulo(String descricao){
-        this.descriçao = descricao;
+        this.descricao = descricao;
     }
 
-    public String getDescriçao(){
-        return descriçao;
+    public String getDescricao(){
+        return descricao;
     }
 }
