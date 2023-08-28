@@ -1,10 +1,10 @@
 package cobranca.algaworks.model;
 
-import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -13,11 +13,19 @@ public class Titulo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
+
+    @NotEmpty(message = "Descrição é obrigatória")
+    @Size(max = 60, message = "A descrição não pode conter mais de 60 caracteres")
     private String descricao;
+
+    @NotNull(message = "Data de vencimento é obrigatória")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     private Date dataVencimento;
-    @NotNull
+
+    @NotNull(message = "Valor é obrigatório")
+    @DecimalMin(value = "0.01", message = "Valor não pode ser menor que 0,01")
+    @DecimalMax(value = "9999999.99", message = "O valor nã o pode ser maior que 9.999.999,99")
     @NumberFormat(pattern = "#,##0.00")
     private BigDecimal valor;
     @Enumerated(EnumType.STRING)
