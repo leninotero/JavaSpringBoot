@@ -1,7 +1,0 @@
-
-# Título do Projeto
-
-Uma breve descrição sobre o que esse projeto faz e para quem ele é
-
-## Sub-Titulo
-Este site é desenvolvido paraa disciploina de Projegtos da FICR
